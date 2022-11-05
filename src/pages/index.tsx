@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -8,6 +9,17 @@ import { ResponseData } from 'src/constants';
 import { IPost } from 'src/service/PostService';
 import { getWithPath } from 'src/utils/http';
 import styles from '../styles/Home.module.css';
+=======
+import type {GetServerSideProps, NextPage} from "next";
+import Head from "next/head";
+import Image from "next/image";
+import Navbar from "src/components/Navbar";
+import PostCard from "src/components/PostCard";
+import {ResponseData} from "src/constants";
+import {IPost} from "src/service/PostService";
+import {getWithPath} from "src/utils/http";
+import styles from "../styles/Home.module.css";
+>>>>>>> 359f6a667e06a6eda6087b3e0d6e02413e942209
 
 interface HomeProps {
   posts: ResponseData<IPost[]>;
