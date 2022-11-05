@@ -10,12 +10,13 @@
         "emulators": "firebase emulators:start --import=data --export-on-exit"
     },
     "dependencies": {
-        "dayjs": "^1.11.5",
         "axios": "^0.27.2",
+        "dayjs": "^1.11.5",
         "next": "12.3.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-firebase-hooks": "^5.0.3",
+        "react-icons": "^4.6.0",
         "react-use": "^17.4.0"
     },
     "devDependencies": {

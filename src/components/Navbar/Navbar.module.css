@@ -1,0 +1,29 @@
+.navbarContainer {
+  background-color: #222222;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navLeft {
+  flex: 1;
+}
+
+.navCenter {
+  flex: 2;
+}
+
+.navbarInput {
+  padding: 10px;
+  border-radius: 14px;
+  background-color: #fff;
+  border: none;
+}
+
+.navRight {
+  flex: 1;
+}

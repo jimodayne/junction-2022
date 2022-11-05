@@ -1,11 +1,28 @@
 import { ResponseData } from 'src/constants'
 import { getWithPath } from 'src/utils/http'
 
-export interface IPost {
+export type PostStatus = 'draft' | 'published' | 'deleted'
+export type PostCategory = 
+	"sport"|
+	"business"|
+	"entertainment"|
+	"health"| 
+	"art"| 
+	"culture"|
+	"politics"
+
+
+
+	export interface IPost {
     content: string
     title: string
     id: string
     description: string
+    source: string
+    createdAt: string
+    updatedAt: string
+    status: PostStatus,
+		category: PostCategory
 }
 
 const PostService = {
