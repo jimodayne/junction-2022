@@ -2,7 +2,7 @@ import {useState} from "react";
 import NavContent from "./NavContent";
 
 const Navbar = () => {
-    const [isToggle, setToggle] = useState(true);
+    const [isToggle, setToggle] = useState(false);
 
     const handleToggle = () => {
         setToggle((toggle) => !toggle);
@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className="navbar-burger js-navbar-burger " onClick={handleToggle}>
                 <i className="ic-menu icon "> icon </i>
             </div>
-            {isToggle ? <NavContent /> : null}
+            {isToggle ? <NavContent handleToggle={handleToggle} /> : null}
         </nav>
     );
 };

@@ -4,7 +4,9 @@ const nextConfig = {
     swcMinify: true,
     theme: {
         colors: {
-            primary: "#0070f3",
+            primary: {
+                DEFAULT: "#0070f3",
+            },
         },
     },
 };
