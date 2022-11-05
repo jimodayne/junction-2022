@@ -6,8 +6,6 @@ interface PostCardProps extends IPost {}
 const Post = (props: PostCardProps) => {
   const { id, title, description, createdAt, category } = props;
 
-  Moment.locale('en');
-
   return (
     // <Link key={id} href={`/${id}`}>
     <div className={styles.postContainer}>
