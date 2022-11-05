@@ -1,0 +1,8 @@
+@media screen and (max-width: 450px) {
+  .postList {
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,33 @@
+@media screen and (max-width: 450px) {
+  .postContainer {
+    display: flex;
+    gap: 8px;
+  }
+
+  .postLeft {
+    flex: 2;
+    margin: 1px;
+  }
+
+  .postTitle {
+    font-size: 14px;
+  }
+
+  .postDesc {
+    font-size: 10px;
+  }
+
+  .postRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    align-self: flex-start;
+  }
+
+  .postImg {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+  }
+}
