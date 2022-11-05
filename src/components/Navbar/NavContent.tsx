@@ -1,11 +1,17 @@
 import Image from "next/image";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
 import UserAvatar from "src/assets/images/sarah-dayan.a620c98f.jpg";
 import {TOPICS} from "src/constants";
+import {setCollections} from "src/store/app";
+
 import Switch from "../Switch";
 
 const NavContent = () => {
     const [topicArr, setTopicArr] = useState<string[]>([]);
+    const dispatch = useDispatch();
+
+    useEffect(() => {}, []);
 
     const handleClickTopic = (topic: string) => {
         if (topicArr.includes(topic)) {
@@ -19,6 +25,10 @@ const NavContent = () => {
         return topicArr.includes(topic);
     };
 
+    const handleConfirm = () => {
+        dispatch(setCollections(topicArr));
+    };
+
     return (
         <div className="navbar__content">
             <div className="user-info flex items-center">
@@ -27,7 +37,7 @@ const NavContent = () => {
             </div>
             <div className="eco-mode relative">
                 <Switch label="eco" noText />
-                <span>Eco-mode</span>
+                <span className="text-primary">Eco-mode</span>
             </div>
             <div>
                 <ul className="label-list flex-wrap flex gap-2 mt-8">
@@ -43,7 +53,9 @@ const NavContent = () => {
                 </ul>
 
                 <div className="flex justify-center mt-8">
-                    <div className="button px-8 py-2 font-semibold rounded-xl">Confirm</div>
+                    <div onClick={handleConfirm} className="button px-8 py-2  font-semibold rounded-xl">
+                        Confirm
+                    </div>
                 </div>
             </div>
         </div>
