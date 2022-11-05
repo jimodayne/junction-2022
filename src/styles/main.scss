@@ -195,6 +195,14 @@ $primary: #15feeb;
     overflow: hidden;
 }
 
+.is-trimmed-3 {
+    -webkit-line-clamp: 3;
+}
+
+.is-trimmed-2 {
+    -webkit-line-clamp: 2;
+}
+
 .close-btn {
     svg path {
         stroke: #fff;

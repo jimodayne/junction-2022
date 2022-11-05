@@ -1,4 +1,4 @@
-export const DOMAIN_API_URL = "http://localhost:3000/api";
+export const DOMAIN_API_URL = "https://europe-central2-junction-hack22esp-7015.cloudfunctions.net/"
 
 export const TOPICS = [
     "Art",
@@ -12,11 +12,11 @@ export const TOPICS = [
     "Politics",
     "Style",
     "Travel",
-];
+]
 
 export interface ResponseData<T> {
-    data: T;
-    message: string;
-    total?: number;
-    code: number;
+    data: T
+    message: string
+    total?: number
+    code: number
 }

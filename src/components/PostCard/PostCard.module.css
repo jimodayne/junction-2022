@@ -35,12 +35,15 @@
 
     .cardImg {
         width: 100%;
-        height: 100%;
+
         object-fit: cover;
+        height: 240px;
     }
 
     .cardInfo {
         display: flex;
+
+        color: #fff;
     }
 
     .cardInfoLeft {

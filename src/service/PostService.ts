@@ -23,17 +23,21 @@ export interface IPost {
     source: string
     createdAt: string
     updatedAt: string
+    thumbnail?: string
     status: PostStatus
     category: PostCategory
 }
 
 const PostService = {
     getList: async (params?: object): Promise<ResponseData<IPost[]>> => {
-        return await getWithPath("/posts", params)
+        return await getWithUrl(
+            "https://europe-central2-junction-hack22esp-7015.cloudfunctions.net/function-1",
+            params,
+        )
     },
-    getDetail: async (id: string): Promise<ResponseData<IPost>> => {
-        return await getWithPath(`/posts/${id}`)
-    },
+    // getDetail: async (id: string): Promise<ResponseData<IPost>> => {
+    //     return await getWithPath(`/posts/${id}`)
+    // },
 }
 
 export default PostService
