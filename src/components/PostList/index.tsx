@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
+import useApp from "src/hooks/useApp"
 import { IPost } from "src/service/PostService"
 import { store } from "src/store"
-import { selectCollections } from "src/store/app"
+import { selectCollections, selectEco } from "src/store/app"
 import Post from "../Post"
 import PostCard from "../PostCard"
 import styles from "./PostList.module.css"
@@ -14,13 +15,13 @@ interface PostListProps {
 export type RootState = ReturnType<typeof store.getState>
 
 const PostList = (props: PostListProps) => {
-    const collections = useSelector(selectCollections)
+    const { collections, isEco } = useApp()
 
     const { posts } = props
     if (!posts?.length) return null
 
     let results = []
-    if (collections.length == 0) {
+    if (collections.length === 0) {
         results = posts.slice(3, posts.length)
     } else {
         results = posts.slice(0, posts.length)?.filter(post => collections.includes(post.category))
@@ -28,9 +29,7 @@ const PostList = (props: PostListProps) => {
 
     return (
         <div className={styles.postList}>
-            {posts.slice(0, 2)?.map(post => (
-                <PostCard key={post.id} {...post} />
-            ))}
+            {!isEco && posts.slice(0, 2)?.map(post => <PostCard key={post.id} {...post} />)}
 
             {results?.map(post => (
                 <Post key={post.id} {...post} />
