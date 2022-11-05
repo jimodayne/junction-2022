@@ -1,5 +1,5 @@
 import { ResponseData } from "src/constants"
-import { getWithPath } from "src/utils/http"
+import { getWithPath, getWithUrl } from "src/utils/http"
 
 export type PostStatus = "draft" | "published" | "deleted"
 export type PostCategory =

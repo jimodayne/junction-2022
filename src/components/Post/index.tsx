@@ -15,11 +15,7 @@ const Post = (props: PostCardProps) => {
                     {category}
                 </h4>
                 <h2 className={styles.postTitle}>{title}</h2>
-<<<<<<< HEAD
-                <p className={`${styles.postDesc} is-trimmed-2`}>{description}</p>
-=======
                 <p className={`${styles.postDesc} is-trimmed is-trimmed-2`}>{description}</p>
->>>>>>> refs/remotes/origin/main
                 <p className={styles.postDate}>{dayjs(createdAt).format("DD MMM")}</p>
             </div>
             <div className={styles.postRight}>
