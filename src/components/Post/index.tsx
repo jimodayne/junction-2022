@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { IPost } from 'src/service/PostService'
-import styles from './Post.module.css'
-import dayjs from 'dayjs'
+import Link from "next/link"
+import { IPost } from "src/service/PostService"
+import styles from "./Post.module.css"
+import dayjs from "dayjs"
 
 interface PostCardProps extends IPost {}
 const Post = (props: PostCardProps) => {
@@ -15,8 +15,8 @@ const Post = (props: PostCardProps) => {
                     {category}
                 </h4>
                 <h2 className={styles.postTitle}>{title}</h2>
-                <p className={styles.postDesc}>{description}</p>
-                <p className={styles.postDate}>{dayjs(createdAt).format('DD MMM')}</p>
+                <p className={`${styles.postDesc} is-trimmed-2`}>{description}</p>
+                <p className={styles.postDate}>{dayjs(createdAt).format("DD MMM")}</p>
             </div>
             <div className={styles.postRight}>
                 <img

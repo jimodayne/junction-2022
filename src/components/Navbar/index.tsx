@@ -1,22 +1,27 @@
-import {GiHamburgerMenu} from "react-icons/gi";
-import NavContent from "./NavContent";
-import {useState} from "react";
+import { GiHamburgerMenu } from "react-icons/gi"
+import { CgSearch } from "react-icons/cg"
+import NavContent from "./NavContent"
+import { useState } from "react"
 
 const Navbar = () => {
-    const [isToggle, setToggle] = useState(false);
+    const [isToggle, setToggle] = useState(false)
     const handleToggle = () => {
-        setToggle((toggle) => !toggle);
-    };
+        setToggle(toggle => !toggle)
+    }
 
     return (
         <nav className={`navbar ${isToggle ? "is-toggle" : ""} p-6`}>
             {isToggle ? null : (
-                <div className="navbar-burger js-navbar-burger " onClick={handleToggle}>
-                    <GiHamburgerMenu size={30} style={{color: "#15feeb"}} />
+                <div className="flex items-center justify-between">
+                    <div className="navbar-burger" onClick={handleToggle}>
+                        <GiHamburgerMenu size={32} style={{ color: "#15feeb" }} />
+                    </div>
+                    <div className="navbar-logo text-xl font-bold">GEEK ECO</div>
+                    <CgSearch size={32} />
                 </div>
             )}
             {isToggle ? <NavContent handleToggle={handleToggle} /> : null}
         </nav>
-    );
-};
-export default Navbar;
+    )
+}
+export default Navbar

@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import { IPost } from 'src/service/PostService'
-import styles from './PostCard.module.css'
+import Link from "next/link"
+import { IPost } from "src/service/PostService"
+import styles from "./PostCard.module.css"
 
 interface PostCardProps extends IPost {}
 const PostCard = (props: PostCardProps) => {
@@ -16,7 +16,7 @@ const PostCard = (props: PostCardProps) => {
             <div className={styles.cardInfo}>
                 <div className={styles.cardInfoLeft}>
                     <h2 className={styles.cardTitle}>{title}</h2>
-                    <p className={styles.cardDesc}>{description}</p>
+                    <p className={`${styles.cardDesc} is-trimmed`}>{description}</p>
                 </div>
             </div>
         </div>

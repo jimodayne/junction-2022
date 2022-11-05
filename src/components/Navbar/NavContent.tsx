@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import UserAvatar from "src/assets/images/sarah-dayan.a620c98f.jpg"
 import { TOPICS } from "src/constants"
 import { GrClose } from "react-icons/gr"
+import { TbLeaf } from "react-icons/tb"
 import { selectCollections, selectEco, setCollections, setEco } from "src/store/app"
 
 import Switch from "../Switch"
@@ -64,17 +65,21 @@ const NavContent = (props: NavContentProps) => {
                 />
                 <span className="ml-4 text-lg font-semibold">Palmer Jordyn</span>
                 <div onClick={handleToggle} className="close-btn absolute right-0">
-                    <GrClose size={32} style={{ color: "#fff" }} />
+                    <GrClose size={28} style={{ color: "#fff" }} />
                 </div>
             </div>
 
-            <div className="eco-mode relative">
+            <div className="eco-mode relative mt-4">
                 <Switch value={isEco} onChange={handleToggleEco} label="eco" noText />
-                <span className="text-primary">Eco-mode</span>
+
+                <span className="flex items-center mt-1 text-primary">
+                    Eco-mode <TbLeaf className="ml-1" />
+                </span>
             </div>
             {isEco && (
-                <div>
-                    <ul className="label-list flex-wrap flex gap-2 mt-8">
+                <div className="mt-8">
+                    <p className="mb-4">Tap more than a field you want to see in your newsfeed</p>
+                    <ul className="label-list flex-wrap flex gap-2 ">
                         {TOPICS.map(topic => (
                             <li
                                 onClick={() => handleClickTopic(topic)}
