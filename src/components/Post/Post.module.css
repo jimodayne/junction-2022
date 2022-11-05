@@ -1,7 +1,7 @@
 @media screen and (max-width: 450px) {
   .postContainer {
     display: flex;
-    gap: 8px;
+    gap: 12px;
   }
 
   .postLeft {
@@ -10,11 +10,13 @@
   }
 
   .postTitle {
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: bold;
   }
 
   .postDesc {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .postRight {
@@ -25,9 +27,9 @@
     align-self: flex-start;
   }
 
-  .postImg {
+  /* .postImg {
     width: 100px;
     height: 80px;
     object-fit: contain;
-  }
+  } */
 }

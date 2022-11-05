@@ -181,3 +181,16 @@ $primary: #15feeb;
     border: 1px solid $primary;
     color: $primary;
 }
+
+.is-trimmed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.close-btn {
+    svg path {
+        stroke: #fff;
+    }
+}

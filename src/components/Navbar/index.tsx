@@ -1,5 +1,3 @@
-import Link from "next/link";
-import styles from "./Navbar.module.css";
 import {GiHamburgerMenu} from "react-icons/gi";
 import NavContent from "./NavContent";
 import {useState} from "react";

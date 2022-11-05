@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import UserAvatar from "src/assets/images/sarah-dayan.a620c98f.jpg";
 import {TOPICS} from "src/constants";
+import {GrClose} from "react-icons/gr";
 import {selectCollections, selectEco, setCollections, setEco} from "src/store/app";
 
 import Switch from "../Switch";
@@ -53,10 +54,14 @@ const NavContent = (props: NavContentProps) => {
 
     return (
         <div className="navbar__content">
-            <div className="user-info flex items-center">
+            <div className="user-info flex items-center relative ">
                 <Image className="w-24 h-24 rounded-full mx-auto" src={UserAvatar} alt="user" width="72" height="72" />
                 <span className="ml-4 text-lg font-semibold">Palmer Jordyn</span>
+                <div onClick={handleToggle} className="close-btn absolute right-0">
+                    <GrClose size={32} style={{color: "#fff"}} />
+                </div>
             </div>
+
             <div className="eco-mode relative">
                 <Switch value={isEco} onChange={handleToggleEco} label="eco" noText />
                 <span className="text-primary">Eco-mode</span>
