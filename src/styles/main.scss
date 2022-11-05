@@ -4,7 +4,7 @@ $primary: #15feeb;
     z-index: 100;
     &.is-toggle {
         background: black;
-        position: absolute;
+        position: fixed;
         height: 100%;
         width: 100%;
         color: #fff;
