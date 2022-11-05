@@ -10,24 +10,17 @@
         "emulators": "firebase emulators:start --import=data --export-on-exit"
     },
     "dependencies": {
-<<<<<<< HEAD
-=======
         "@reduxjs/toolkit": "^1.9.0",
->>>>>>> 359f6a667e06a6eda6087b3e0d6e02413e942209
         "axios": "^0.27.2",
         "dayjs": "^1.11.5",
         "next": "12.3.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-firebase-hooks": "^5.0.3",
-<<<<<<< HEAD
         "react-icons": "^4.6.0",
-        "react-use": "^17.4.0"
-=======
-        "react-redux": "^8.0.5",
         "react-use": "^17.4.0",
+        "react-redux": "^8.0.5",
         "sass": "^1.56.0"
->>>>>>> 359f6a667e06a6eda6087b3e0d6e02413e942209
     },
     "devDependencies": {
         "@types/node": "18.7.23",

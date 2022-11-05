@@ -1,6 +1,7 @@
 $primary: #15feeb;
 
 .navbar {
+    z-index: 100;
     &.is-toggle {
         background: black;
         position: absolute;
