@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import UserAvatar from "src/assets/images/sarah-dayan.a620c98f.jpg"
+import UserAvatar from "src/assets/images/geekeco-avatar.png"
 import { TOPICS } from "src/constants"
 import { GrClose } from "react-icons/gr"
 import { TbLeaf } from "react-icons/tb"
@@ -63,7 +63,7 @@ const NavContent = (props: NavContentProps) => {
                     width="72"
                     height="72"
                 />
-                <span className="ml-4 text-lg font-semibold">Palmer Jordyn</span>
+                <span className="ml-4 text-lg font-semibold">GeekEco</span>
                 <div onClick={handleToggle} className="close-btn absolute right-0">
                     <GrClose size={28} style={{ color: "#fff" }} />
                 </div>
