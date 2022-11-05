@@ -9,12 +9,23 @@
     margin: 1px;
   }
 
+  .postCategory {
+    text-transform: uppercase;
+    color: #999;
+    border-bottom: 1px solid #15feeb;
+  }
+
   .postTitle {
     font-size: 14px;
   }
 
   .postDesc {
     font-size: 10px;
+  }
+
+  .postDate {
+    font-size: 12px;
+    color: #999;
   }
 
   .postRight {

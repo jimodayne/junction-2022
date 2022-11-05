@@ -18,9 +18,6 @@ const PostCard = (props: PostCardProps) => {
           <h2 className={styles.cardTitle}>{title}</h2>
           <p className={styles.cardDesc}>{description}</p>
         </div>
-        {/* <div className={styles.cardInfoRight}>
-          <p>hello</p>
-        </div> */}
       </div>
     </div>
   );

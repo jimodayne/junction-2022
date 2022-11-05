@@ -1,16 +1,22 @@
 import Link from 'next/link';
 import { IPost } from 'src/service/PostService';
 import styles from './Post.module.css';
+import Moment from 'moment';
 
 interface PostCardProps extends IPost {}
 const Post = (props: PostCardProps) => {
-  const { id, title, description } = props;
+  const { id, title, description, createdAt, category } = props;
+
+  Moment.locale('en');
+
   return (
     // <Link key={id} href={`/${id}`}>
     <div className={styles.postContainer}>
       <div className={styles.postLeft}>
+        <h4 className={styles.postCategory}>{category}</h4>
         <h2 className={styles.postTitle}>{title}</h2>
         <p className={styles.postDesc}>{description}</p>
+        <p className={styles.postDate}>{Moment(createdAt).format('DD MMM')}</p>
       </div>
       <div className={styles.postRight}>
         <img
