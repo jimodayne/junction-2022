@@ -22,8 +22,6 @@ const Home = (props: HomeProps) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Navbar />
-
             <main className={styles.main}>
                 <h1 className={styles.title}>Junction 2022</h1>
 
