@@ -1,16 +1,16 @@
-import type {GetServerSideProps} from "next";
-import Head from "next/head";
-import {ResponseData} from "src/constants";
-import {IPost} from "src/service/PostService";
-import styles from "../styles/Home.module.css";
-import PostList from "src/components/PostList";
+import type { GetServerSideProps } from "next"
+import Head from "next/head"
+import { ResponseData } from "src/constants"
+import { IPost } from "src/service/PostService"
+import styles from "../styles/Home.module.css"
+import PostList from "src/components/PostList"
 
 interface HomeProps {
-    posts: ResponseData<IPost[]>;
+    posts: ResponseData<IPost[]>
 }
 
 const Home = (props: HomeProps) => {
-    const {posts} = props;
+    const { posts } = props
     return (
         <div className={styles.container}>
             <Head>
@@ -23,10 +23,10 @@ const Home = (props: HomeProps) => {
                 <PostList posts={posts.data} />
             </main>
         </div>
-    );
-};
+    )
+}
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async context => {
     const data: ResponseData<IPost[]> = {
         message: "ok",
         code: 0,
@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "01",
                 status: "published",
-                category: "politics",
+                category: "Politics",
                 source: "Republic World",
                 title: "Elon Musks parody account with blue tick tweets lyrics of Bhojpuri song",
                 description:
@@ -47,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "02",
                 status: "published",
-                category: "business",
+                category: "Business & Finance",
                 source: "NDTV News",
                 title: "Binance Helped Iranian Firms Trade $8 Billion Despite Sanctions: Report",
                 description:
@@ -60,7 +60,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "03",
                 status: "published",
-                category: "business",
+                category: "Art",
                 source: "RT",
                 title: "Biden lashes out at Twitter and Musk",
                 description:
@@ -73,7 +73,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "04",
                 status: "published",
-                category: "business",
+                category: "Media",
                 source: "Seeking Alpha",
                 title: "Are The FANG Stocks Dead?",
                 description:
@@ -86,7 +86,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "05",
                 status: "published",
-                category: "politics",
+                category: "Medical",
                 source: "Republic World",
                 title: "Elon Musks parody account with blue tick tweets lyrics of Bhojpuri song",
                 description:
@@ -99,7 +99,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "06",
                 status: "published",
-                category: "politics",
+                category: "Entertainment",
                 source: "Seeking Alpha",
                 title: "Weekly Commentary: Powell Building Credibility",
                 description:
@@ -112,7 +112,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "07",
                 status: "published",
-                category: "entertainment",
+                category: "Entertainment",
                 source: "Yahoo Entertainment",
                 title: "Twitter: Elon Musk blames 'activist groups' for earnings drop",
                 description:
@@ -126,7 +126,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "09",
                 status: "published",
-                category: "health",
+                category: "Lifestyle",
                 source: "INSIDER",
                 title: "Selena Gomez's former assistant says the singer didn't 'want to be alive' during her 2016 tour",
                 description:
@@ -139,7 +139,46 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             {
                 id: "10",
                 status: "published",
-                category: "politics",
+                category: "Style",
+                source: "Rolling Stone",
+                title: "Kanye West Will Put Elon Musk’s ‘Free Speech’ Promise to the Test",
+                description:
+                    "The rapper continues to peddle antisemitism on Twitter. It could cost the new CEO — who happens to be his friend — a sizable fortune",
+                createdAt: "2022-11-04T21:30:46Z",
+                updatedAt: "2022-11-04T21:30:46Z",
+                content:
+                    "Elon Musk has owned Twitter for just one week — though in all the turmoil, it has felt like a lifetime. \r\nFrom the firing of top executives “for cause,” to the restriction of employee access to conte… [+6769 chars]",
+            },
+            {
+                id: "11",
+                status: "published",
+                category: "Sports",
+                source: "Rolling Stone",
+                title: "Kanye West Will Put Elon Musk’s ‘Free Speech’ Promise to the Test",
+                description:
+                    "The rapper continues to peddle antisemitism on Twitter. It could cost the new CEO — who happens to be his friend — a sizable fortune",
+                createdAt: "2022-11-04T21:30:46Z",
+                updatedAt: "2022-11-04T21:30:46Z",
+                content:
+                    "Elon Musk has owned Twitter for just one week — though in all the turmoil, it has felt like a lifetime. \r\nFrom the firing of top executives “for cause,” to the restriction of employee access to conte… [+6769 chars]",
+            },
+            {
+                id: "12",
+                status: "published",
+                category: "General",
+                source: "Rolling Stone",
+                title: "Kanye West Will Put Elon Musk’s ‘Free Speech’ Promise to the Test",
+                description:
+                    "The rapper continues to peddle antisemitism on Twitter. It could cost the new CEO — who happens to be his friend — a sizable fortune",
+                createdAt: "2022-11-04T21:30:46Z",
+                updatedAt: "2022-11-04T21:30:46Z",
+                content:
+                    "Elon Musk has owned Twitter for just one week — though in all the turmoil, it has felt like a lifetime. \r\nFrom the firing of top executives “for cause,” to the restriction of employee access to conte… [+6769 chars]",
+            },
+            {
+                id: "13",
+                status: "published",
+                category: "Art",
                 source: "Rolling Stone",
                 title: "Kanye West Will Put Elon Musk’s ‘Free Speech’ Promise to the Test",
                 description:
@@ -150,10 +189,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
                     "Elon Musk has owned Twitter for just one week — though in all the turmoil, it has felt like a lifetime. \r\nFrom the firing of top executives “for cause,” to the restriction of employee access to conte… [+6769 chars]",
             },
         ],
-    };
+    }
 
     // const data = await PostService.getList()
-    return {props: {posts: data}};
-};
+    return { props: { posts: data } }
+}
 
-export default Home;
+export default Home
