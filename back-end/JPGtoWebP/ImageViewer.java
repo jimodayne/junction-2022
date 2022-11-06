@@ -41,8 +41,10 @@ public class ImageViewer extends Application {
     private String HOME_IMAGE = "https://cdn.tgdd.vn//GameApp/1385458//webp-la-gi-4-cach-chuyen-doi-anh-webp-sang-png-jpg-15-800x450.jpg";
     private ImageView m_Imageview = new ImageView(generateImage());
     private ImageView m_HistogramView = new ImageView(m_Imageview.getImage());
+    private ImageView m_ResizeView = new ImageView(m_Imageview.getImage());
     private Canvas m_OverlayCanvas = null;
     private Stage m_HistogramWindow = null;
+    private Stage m_ResizeWindow = null;
     private Image currentImage;
 
     public static void main(String[] args) {
@@ -69,7 +71,7 @@ public class ImageViewer extends Application {
         m_Imageview.setImage(wimage);
     }
 
-    private void showWebpImage() {
+    private void showWebpImage(BufferedImage bimage) {
 
         if (m_HistogramWindow == null) {
             m_HistogramWindow = new Stage();
@@ -82,7 +84,10 @@ public class ImageViewer extends Application {
         }
         m_HistogramWindow.show();
 
-        WritableImage wimage = SwingFXUtils.toFXImage(null, null);
+        if (bimage == null) {
+            return;
+        }
+        WritableImage wimage = SwingFXUtils.toFXImage(bimage, null);
         m_HistogramView.setImage(wimage);
     }
 
@@ -111,7 +116,7 @@ public class ImageViewer extends Application {
 			}
 		});
 
-        Button toWebpButton = new Button("To Webp");
+        Button toWebpButton = new Button("Convert to Webp");
         toWebpButton.setOnAction(e -> {
 			try {
 				this.toWebp(currentImage);
@@ -120,7 +125,16 @@ public class ImageViewer extends Application {
 			}
 		});
         
-        HBox buttons = new HBox(closeButton, openButton, toWebpButton);
+        Button resizeButton = new Button("Resize");
+        resizeButton.setOnAction(e -> {
+			try {
+				this.toWebp(currentImage);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		});
+        
+        HBox buttons = new HBox(closeButton, openButton, toWebpButton, resizeButton);
         buttons.setSpacing(10);
         buttons.setPadding(new Insets(5));
         vbox.getChildren().addAll(imageViewPane, buttons);
@@ -129,11 +143,30 @@ public class ImageViewer extends Application {
         stage.show();
     }
 
+    private void resize(Image image) {
+        if (m_ResizeWindow == null) {
+        	m_ResizeWindow = new Stage();
+        	m_ResizeWindow.setTitle("Resize");
+        	m_ResizeWindow.initModality(Modality.NONE);
+            VBox dialogVbox = new VBox(20);
+            dialogVbox.getChildren().add(m_ResizeView);
+            Scene dialogScene = new Scene(dialogVbox, 512, 512);
+            m_HistogramWindow.setScene(dialogScene);
+        }
+        m_HistogramWindow.show();
+
+        WritableImage wimage = SwingFXUtils.toFXImage(null, null);
+        m_HistogramView.setImage(wimage);
+    }
     private void toWebp(Image image) throws IOException {
-    	
-    	
+    	BufferedImage bimage = getViewImage();
+        java.awt.Image resultingImage = bimage.getScaledInstance(256, 256, java.awt.Image.SCALE_DEFAULT);
+        BufferedImage outputImage = new BufferedImage(256, 256, BufferedImage.TYPE_INT_RGB);
+        outputImage.getGraphics().drawImage(resultingImage, 0, 0, null);
         
-        showWebpImage();
+        showWebpImage(outputImage);
+        m_HistogramView.setFitHeight(512);
+        m_HistogramView.setFitWidth(512);
 
     }
 
