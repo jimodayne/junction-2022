@@ -1,1 +1,0 @@
-MAIN_CLASS: com.econews.econewsjunction2022.EconewsJunction2022Application
