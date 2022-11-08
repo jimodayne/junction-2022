@@ -28,51 +28,49 @@
     line-height: 1.5;
 }
 
-@media screen and (max-width: 450px) {
-    .cardContainer {
-        position: relative;
-    }
+.cardContainer {
+    position: relative;
+}
 
-    .cardImg {
-        width: 100%;
+.cardImg {
+    width: 100%;
 
-        object-fit: cover;
-        height: 240px;
-    }
+    object-fit: cover;
+    height: 240px;
+}
 
-    .cardInfo {
-        display: flex;
+.cardInfo {
+    display: flex;
 
-        color: #fff;
-    }
+    color: #fff;
+}
 
-    .cardInfoLeft {
-        flex: 3;
-        position: absolute;
-        bottom: 0px;
-        z-index: 99;
-        padding: 12px;
-    }
+.cardInfoLeft {
+    flex: 3;
+    position: absolute;
+    bottom: 0px;
+    z-index: 99;
+    padding: 12px;
+}
 
-    .cardInfoLeft::before {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(0deg, rgb(0 0 0 / 50%) 50%, rgb(0 0 0 / 0%) 100%);
-        z-index: -1;
-    }
+.cardInfoLeft::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgb(0 0 0 / 50%) 50%, rgb(0 0 0 / 0%) 100%);
+    z-index: -1;
+}
 
-    .cardTitle {
-        font-size: 18px;
-        margin-bottom: 4px;
-        font-weight: bold;
-    }
+.cardTitle {
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
 
-    .cardDesc {
-        font-size: 12px;
-        margin-bottom: 0;
-    }
+.cardDesc {
+    font-size: 12px;
+    margin-bottom: 0;
 }

@@ -208,3 +208,15 @@ $primary: #15feeb;
         stroke: #fff;
     }
 }
+
+@media screen and (min-width: 450px) {
+    .app-wrapper {
+        width: 450px;
+        max-width: 450px;
+        margin: auto;
+        position: relative;
+    }
+    .navbar {
+        max-width: 450px;
+    }
+}
