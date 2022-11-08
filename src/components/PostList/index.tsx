@@ -1,9 +1,7 @@
-import { useState } from "react"
-import { useSelector } from "react-redux"
 import useApp from "src/hooks/useApp"
+import usePosts from "src/hooks/usePost"
 import { IPost } from "src/service/PostService"
 import { store } from "src/store"
-import { selectCollections, selectEco } from "src/store/app"
 import Post from "../Post"
 import PostCard from "../PostCard"
 import styles from "./PostList.module.css"
@@ -15,25 +13,20 @@ interface PostListProps {
 export type RootState = ReturnType<typeof store.getState>
 
 const PostList = (props: PostListProps) => {
-    const { collections, isEco } = useApp()
-
+    const { isEco } = useApp()
     const { posts } = props
-    if (!posts?.length) return null
 
-    let results = []
-    if (collections.length === 0) {
-        results = posts.slice(3, posts.length)
-    } else {
-        results = posts.slice(0, posts.length)?.filter(post => collections.includes(post.category))
-    }
+    const { featurePosts, filteredPosts } = usePosts(posts)
 
     return (
         <div className={styles.postList}>
-            {!isEco && posts.slice(0, 2)?.map(post => <PostCard key={post.id} {...post} />)}
+            {!isEco && featurePosts.map(post => <PostCard key={post.id} {...post} />)}
 
-            {results?.map(post => (
-                <Post key={post.id} {...post} />
-            ))}
+            {filteredPosts?.length === 0 ? (
+                <div className="text-center mt-8"> Sorry, no post found </div>
+            ) : (
+                filteredPosts.map(post => <Post key={post.id} {...post} />)
+            )}
         </div>
     )
 }

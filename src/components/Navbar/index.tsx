@@ -13,7 +13,7 @@ const Navbar = () => {
         <nav className={`navbar ${isToggle ? "is-toggle" : ""} p-6`}>
             {isToggle ? null : (
                 <div className="flex items-center justify-between">
-                    <div className="navbar-burger" onClick={handleToggle}>
+                    <div className="navbar-burger cursor-pointer" onClick={handleToggle}>
                         <GiHamburgerMenu size={32} style={{ color: "#15feeb" }} />
                     </div>
                     <div className="navbar-logo text-xl font-bold">GEEK ECO</div>

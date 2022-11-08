@@ -64,7 +64,7 @@ const NavContent = (props: NavContentProps) => {
                     height="72"
                 />
                 <span className="ml-4 text-lg font-semibold">GeekEco</span>
-                <div onClick={handleToggle} className="close-btn absolute right-0">
+                <div onClick={handleToggle} className="cursor-pointer close-btn absolute right-0">
                     <GrClose size={28} style={{ color: "#fff" }} />
                 </div>
             </div>
